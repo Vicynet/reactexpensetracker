@@ -116,11 +116,11 @@ class Expenses extends Component {
         }
 
         return(
-            <div>
-                <div style={{display: 'flex'}}>
-                    <h2>Expenses</h2>
-                    <button type="button" className="btn btn-primary ml-auto" data-toggle="modal" data-target="#exampleModal">
-                    + Add expense
+            <div className="container">
+                <div style={{display: 'flex', verticalAlign: 'center', marginTop: '2em'}}>
+                    <h4>Expenses</h4>
+                    <button type="button" style={{width: '50px', height: '50px', borderRadius: '50px'}} className="btn btn-primary ml-auto" data-toggle="modal" data-target="#exampleModal">
+                    +
                     </button>
                 </div>
                     {/* <!-- Modal --> */}
@@ -166,10 +166,9 @@ class Expenses extends Component {
                             </div>
                         </div>
                     </div>
-                <table className="table table-striped">
+                <table className="table table-striped table-hover table-responsive-sm mt-2">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Description</th>
                         <th scope="col">Expense date</th>
                         <th scope="col">Expense category</th>
@@ -181,11 +180,10 @@ class Expenses extends Component {
                     Expenses.map(
                         expense =>  
                         <tr key={expense.id}>
-                            <th scope="row">{expense.id}</th>
                             <td>{expense.description}</td>
                             <td><Moment date={expense.expenseDate} format="YYYY/MM/DD"/></td>
                             <td>{expense.category.name}</td>
-                            <td><button type="button" onClick={() => this.removeExpense(expense.id)} className="btn btn-danger">Delete</button></td>
+                            <td><button type="button" style={{width: '40px', height: '40px', borderRadius: '50px'}} onClick={() => this.removeExpense(expense.id)} className="btn btn-danger">x</button></td>
                         </tr>
                         // </div>
                     )

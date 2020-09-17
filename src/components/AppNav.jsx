@@ -7,7 +7,7 @@ class AppNav extends Component {
         return (
             <div>
                 <nav className="navbar navbar-dark bg-dark">
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" href="/" style={{margin: '1em auto'}}>
                         ExpenseTrailer
                     </a>
                 </nav>
